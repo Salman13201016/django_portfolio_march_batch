@@ -21,6 +21,9 @@ from . import views as v
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('index/', v.index),
-    path('admin/about', v.aboutindex, name='admin/about'),
+    path('admin/about/', v.aboutindex, name='admin/about'),
     path('admin/about/store', v.store, name='store'),
+    path('admin/about/edit/<int:id>/', v.edit_form, name='edit_about'),
+    path('admin/about/update/', v.update, name='update'),
+    path('admin/about/delete/<int:id>/', v.delete, name='del_about'),
 ]

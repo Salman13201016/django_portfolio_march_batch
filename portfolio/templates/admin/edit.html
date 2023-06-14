@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Majestic Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
-  <link rel="stylesheet" href="{% static 'vendors/base/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendors/mdi/css/materialdesignicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/vendors/base/vendor.bundle.base.css' %}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'admin/css/style.css' %}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+  <link rel="shortcut icon" href="{% static 'admin/images/favicon.png' %}" />
 </head>
 
 <body>
@@ -175,123 +175,191 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Portfolio Setup</span>
+              <span class="menu-title">Portfolio</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'admin/about' %}">About</a></li>
-                <!-- <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li> -->
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">About</a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Education</a></li>
               </ul>
             </div>
           </li>
-
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="../../pages/forms/basic_elements.html">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Form elements</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../pages/charts/chartjs.html">
+              <i class="mdi mdi-chart-pie menu-icon"></i>
+              <span class="menu-title">Charts</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../pages/tables/basic-table.html">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Tables</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../pages/icons/mdi.html">
+              <i class="mdi mdi-emoticon menu-icon"></i>
+              <span class="menu-title">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="mdi mdi-account menu-icon"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login-2.html"> Login 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register-2.html"> Register 2 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/lock-screen.html"> Lockscreen </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../documentation/documentation.html">
+              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li> -->
         </ul>
       </nav>
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-12 grid-margin stretch-card">
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">About Information</h4>
-                  
-                  <form class="forms-sample" method="POST" action = "{% url 'store'  %}">
-                    {% csrf_token %}
+                  <h4 class="card-title">Default form</h4>
+                  <p class="card-description">
+                    Basic form layout
+                  </p>
+                  <form class="forms-sample">
                     <div class="form-group">
-                      <label for="exampleInputName1">Name</label>
-                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name">
+                      <label for="exampleInputUsername1">Username</label>
+                      <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail3">Phone Number</label>
-                      <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Phone" name="phone">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Blood Group</label>
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Blood Group" name="bg">
+                      <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                      <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Facebook Link</label>
-                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="Facebook" name="fb">
+                    <div class="form-check form-check-flat form-check-primary">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember me
+                      </label>
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                     <button class="btn btn-light">Cancel</button>
                   </form>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-12 stretch-card">
+            </div> -->
+            <!-- <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Table with contextual classes</h4>
+                  <h4 class="card-title">Horizontal Form</h4>
                   <p class="card-description">
-                    Add class <code>.table-{color}</code>
+                    Horizontal form layout
                   </p>
-                  <div class="table-responsive pt-3">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            First name
-                          </th>
-                          <th>
-                            Phone
-                          </th>
-                          <th>
-                            Email
-                          </th>
-                          <th>
-                            Blood Group
-                          </th>
-                          <th>
-                            Facebook link
-                          </th>
-                          <th>
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for data in about_data%}
-                        <tr class="table-primary">
-                          <td>
-                            {{forloop.counter}}
-                          </td>
-                          <td>
-                            {{data.name}}
-                          </td>
-                          <td>
-                            {{data.phone}}
-                          </td>
-                          <td>
-                            {{data.email}}
-                          </td>
-                          <td>
-                            {{data.bg}}
-                          </td>
-                          <td>
-                            {{data.fb}}
-                          </td>
-                          <td>
-                            <a href="{% url 'edit_about' data.id %}">Edit</a>
-                            <a href="{% url 'del_about' data.id %}">Delete</a>
-                          </td>
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
+                  <form class="forms-sample">
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Email</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="Username">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Email</label>
+                      <div class="col-sm-9">
+                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Mobile</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="exampleInputMobile" placeholder="Mobile number">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Re Password</label>
+                      <div class="col-sm-9">
+                        <input type="password" class="form-control" id="exampleInputConfirmPassword2" placeholder="Password">
+                      </div>
+                    </div>
+                    <div class="form-check form-check-flat form-check-primary">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        Remember me
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">About Yourself</h4>
+                  <p class="card-description">
+                    Edit About Information
+                  </p>
+                  <form class="forms-sample" method="POST" action="{% url 'update_about' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputName1">Name</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="fname">
+                       <input type="hidden"class="form-control" id="exampleInputName1" placeholder="Name" name="id" value="{{id}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Date of Birth</label>
+                        <input type="date" class="form-control" id="exampleInputName1" placeholder="Name" name="dob">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputName1">Phone</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Phone Number" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleTextarea1">Description</label>
+                      <textarea class="form-control" id="exampleTextarea1" rows="4" name="desc"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputName1">Image</label>
+                      <input type="file" class="form-control" id="exampleInputName1" placeholder="Phone Number" name="image">
                   </div>
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                  </form>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <!-- content-wrapper ends -->
@@ -310,12 +378,12 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="{% static 'vendors/base/vendor.bundle.base.js' %}"></script>
+  <script src="{% static 'admin/vendors/base/vendor.bundle.base.js' %}"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="{% static 'js/off-canvas.js' %}"></script>
-  <script src="{% static 'js/hoverable-collapse.js' %}"></script>
-  <script src="{% static 'js/template.js' %}"></script>
+  <script src="{% static 'admin/js/off-canvas.js' %}"></script>
+  <script src="{% static 'admin/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'admin/js/template.js' %}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{% static 'js/file-upload.js' %}"></script>
